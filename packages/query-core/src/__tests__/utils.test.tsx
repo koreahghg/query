@@ -535,6 +535,12 @@ describe('core/utils', () => {
       expect(newItems).toStrictEqual([2, 3, 4])
     })
 
+    it('should not exceed max when items already exceed max', () => {
+      const items = [1, 2, 3, 4, 5]
+      const newItems = addToEnd(items, 6, 3)
+      expect(newItems).toStrictEqual([4, 5, 6])
+    })
+
     it('should add item to the end of the array when max = 0', () => {
       const items = [1, 2, 3]
       const item = 4
@@ -563,7 +569,13 @@ describe('core/utils', () => {
       const item = 4
       const max = 2
       const newItems = addToStart(items, item, max)
-      expect(newItems).toStrictEqual([4, 1, 2])
+      expect(newItems).toStrictEqual([4, 1])
+    })
+
+    it('should not exceed max when items already exceed max', () => {
+      const items = [1, 2, 3, 4, 5]
+      const newItems = addToStart(items, 6, 3)
+      expect(newItems).toStrictEqual([6, 1, 2])
     })
 
     it('should not remove any items if max = 0', () => {
