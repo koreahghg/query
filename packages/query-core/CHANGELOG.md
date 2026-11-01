@@ -1,5 +1,23 @@
 # @tanstack/query-core
 
+## 5.105.1
+
+### Patch Changes
+
+- [#12406](https://github.com/TanStack/query/pull/12406) [`6f8a48d`](https://github.com/TanStack/query/commit/6f8a48d543b499b6d9b0e95050c28183c8c18ae0) - Reduce temporary allocations when checking tracked result properties for observer notifications.
+
+- [#12390](https://github.com/TanStack/query/pull/12390) [`18e54bf`](https://github.com/TanStack/query/commit/18e54bfac3dc3756afdb8840418d831c61bc15bf) - Exclude `fetchStatus` from the filters accepted by `QueryClient.isFetching`, `useIsFetching`, and `injectIsFetching`. These APIs always count queries with `fetchStatus: 'fetching'`.
+
+## 5.105.0
+
+No changes in this release.
+
+## 5.104.5
+
+### Patch Changes
+
+- [#12131](https://github.com/TanStack/query/pull/12131) [`f608f93`](https://github.com/TanStack/query/commit/f608f933a36da30670082e90d0a56b2569290563) - Use the supplied query options when fetching optimistically so Suspense queries can fetch after their cache entry is recreated without a query function.
+
 ## 5.104.4
 
 ### Patch Changes
